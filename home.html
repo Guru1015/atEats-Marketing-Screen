@@ -2,1897 +2,556 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <title>atEats Marketing Site</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Outfit' rel='stylesheet'>
-    <style>
-        body {
-           font-family: 'Outfit', sans-serif;
-       }
-
-       .navbar {
-           background: white;
-           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-           padding: 0px 0px 0px 0px;
-           justify-content: center;
-           align-items: center;
-           
-
-       }
-
-       .container {
-        display: flex;
-        justify-content: space-between; /* Ensures space between logo and menu button */
-        max-width: 1200px;
-        height: 80px;
-        padding: 0 20px 0 30px; /* Add padding to avoid content sticking to edges */
-        position: sticky;
-        top: 0;
-        background-color: white;
-        border-bottom: 0.5px solid #00000029;
-        z-index: 99999;
-        width: 100%;
-   
-}
-
-       .logo {
-           font-size: 20px;
-           font-weight: 600;
-           color: black;
-           text-decoration: none;
-           display: inline-block;
-           line-height: 25.2px;
-          
-           /* margin-right:0px; Ensure the logo aligns to the left */
-           
-        /* Allow the logo to take available space */
-       }
-
-       .nav-links {
-           display: flex;
-           align-items: center;
-           gap: 40px;
-       }
-
-       .nav-links a {
-           text-decoration: none;
-           color: black;
-           font-size: 20px;
-           line-height: 25.2px;
-           font-weight: 400;
-           opacity: 0.89;
-
-       }
-
-       .dropdown {
-           position: relative;
-       }
-
-       .dropbtn {
-           background: none;
-           border: none;
-           cursor: pointer;
-           font-size: 20px;
-           color: black;
-           line-height: 25.2px;
-           font-weight: 400;
-           opacity: 0.89;
-       }
-
-       .dropdown-content {
-           display: none;
-           position: absolute;
-           background: white;
-           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-           border-radius: 8px;
-           min-width: 370px;
-           z-index: 1;
-           font-weight: 400px;
-
-       }
-
-       .dropdown-content a {
-           display: block;
-           margin: 15px 15px;
-           padding: 0px 0px 0px 5px;
-           text-decoration: none;
-           color: black;
-           font-size: 14px;
-       }
-
-       .dropdown-content a:hover {
-           background: rgba(0, 128, 0, 0.1);
-           border-radius: 6px;
-       }
-
-       .dropdown:hover .dropdown-content {
-           display: block;
-       }
-
-       .login-btn {
-           border: 0.8px solid #0A6F5F;
-           color: #0A6F5F;
-           padding: 5px 10px;
-           border-radius: 5px;
-           cursor: pointer;
-           width: 86px;
-          height: 36px;
-          background-color: white;
-          font-weight: bolder;
-       }
-
-
-       .menu-btn {
-           display: none; /* Hide by default */
-   font-size: 24px;
-   background: none;
-   border: none;
-   cursor: pointer;
-   margin-left: auto;
-   margin-top: 15px;
-       }
-
-       @media (max-width: 950px) {
-           .container {
-       position: relative; /* Needed for absolute positioning inside */
-       display: flex;
-       /* align-items: center; */
-       align-items: center;
-       border-bottom: 0px;
-       justify-content: flex-start; 
-   }
-
-   .logo {
-       /* Ensures it aligns to the left */
-       flex: 1;
-       justify-self: left;
-       margin: auto;
-       padding: auto;
-   }
-   .nav-links {
-       display: none; /* Hide the nav links by default in mobile view */
-       flex-direction: column;
-       position: absolute;
-       top: 60px; /* Adjust based on your navbar height */
-       left: 0;
-       width: 100%;
-       background: white;
-       padding: 10px;
-       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-       z-index: 1000; /* Ensure the nav links appear above other content */
-   }
-
-           .dropdown-content{
-               align-items: left;
-           }
-           .dropdown {
-       position: static; /* Reset position for dropdowns in mobile view */
-   }
-   .dropdown-content {
-       position: static; /* Reset position for dropdown content */
-       box-shadow: none; /* Remove shadow for a cleaner look */
-       min-width: 100%; /* Make dropdown content full width */
-       background: transparent; /* Remove background for a nested look */
-       padding: 0; /* Remove padding */
-   }
-   .dropdown-content a {
-       padding: 10px 20px; /* Add padding for better spacing */
-       font-size: 16px; /* Increase font size for readability */
-   }
-   .dropdown:hover .dropdown-content {
-       display: none; /* Disable hover effect in mobile view */
-   }
-   .dropdown.active .dropdown-content {
-       display: block; /* Show dropdown content when active */
-   }
-           .nav-links.active {
-       display: flex; /* Show the nav links when active */
-   }
-
-           .menu-btn {
-       display: block; /* Ensure it appears */
-       position: absolute;
-       top: 30%;
-       right: 20px;
-       transform: translateY(-50%);
-       z-index: 1000; /* Ensure it's above other elements */
-   }
-   #nav-links{
-       justify-content: flex-start;
-       align-items: flex-start;
-   }
-   #logo{
-       justify-content: flex-start;
-       align-items: flex-start;
-   }
-   .dropdown-content{
-       text-align: left;
-   }
-       }
-
-        /* end of navbar style   */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            border: 0;
-        }
-
-        h1 {
-            display: inline-block;
-        }
-
-        .image1 {
-            height: default;
-            width: 450px;
-            margin-right: 4900px;
-            margin: 0;
-        }
-
-        .one {
-            position: relative;
-        }
-
-        body {
-            font-family: 'Outfit';
-        }
-
-        .containermain {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1200px;
-            margin: 10px auto;
-            padding: 20px;
-            margin-top: 0px;
-            padding-top: 0px;
-        }
-
-        .text-content {
-            max-width: 54%;
-        }
-
-        @media screen and (max-width:768px) {
-            .text-content {
-                max-width: 100%;
-                text-align: left;
-            }
-
-        }
-
-        .text-content h1 {
-            font-size: 2.5rem;
-            line-height: 1.5;
-            color: #000;
-        }
-
-        .text-content h1 span {
-            color: #0D8C78
-        }
-
-        .text-content p {
-            font-size: 1.2rem;
-            color: grey;
-            margin: 0px 0;
-        }
-
-        .buttons {
-            margin-top: 20px;
-        }
-
-        .buttons button {
-            color: #ffff;
-            background-color: #0A6F5F;
-            border: none;
-            border-radius: 5px;
-            height: 50px;
-            width: 110px;
-            margin: 0 10px;
-            cursor: pointer;
-            font-size: 1rem;
-            margin-left: 0px;
-            margin-left: 0px;
-        }
-
-        .buttons .free-trial {
-            background-color: white;
-            color: #2d8659;
-            border: 2px solid #2d8659;
-        }
-
-        .buttons button:hover {
-            opacity: 0.9;
-            transition: 0.3s ease;
-        }
-
-        .image-content {
-            max-width: 40%;
-            width: 446px;
-            height: 592px;
-        }
-
-        .image-content img {
-            width: 100%;
-            border-radius: 10px;
-        }
-
-        /* Media Queries */
-        @media (max-width: 768px) {
-            .containermain {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .image-content {
-                display: none;
-            }
-
-            .text-content h1 {
-                font-size: 28px;
-                font-weight: 600;
-            }
-
-            .text-content p {
-                font-size: 1rem;
-            }
-
-            .buttons button {
-                width: 100px;
-                height: 40px;
-                font-size: 0.9rem;
-                margin: 10px 5px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .text-content h1 {
-                font-size: 28px;
-            }
-
-            .text-content p {
-                font-size: 0.9rem;
-            }
-
-            .buttons button {
-                width: 90px;
-                height: 35px;
-                font-size: 0.8rem;
-            }
-        }
-
-        .div2 {
-            display: flex;
-            flex-direction: column;
-            /* align-items: center; */
-            /* justify-content: center; */
-            max-width: 1200px;
-            margin: 12px auto;
-            padding: 0 0 0 0;
-            text-align: center;
-            margin-bottom: 0px;
-        }
-
-        .heading1 { 
-            text-align: left;
-            padding-left: 10px;
-            font-size: clamp(1.5rem, 5vw, 2.0rem);
-       
-        }
-        
-
-
-        @media screen and (max-width:768px) {
-            .heading1 {
-                text-align: left;
-                letter-spacing: 0.5px;
-                margin-left: 13px;
-                line-height: 45px;
-                padding: 0px;
-            }
-
-        }
-
-        .content-wrapper {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            margin:0 12px 12px 12px;
-        }
-
-        @media screen and (max-width:768px) {
-            .content-wrapper {
-                display: block;
-            }
-        }
-
-        .text-content2 {
-            max-width: 50%;
-            text-align: left;
-            /* Align text to the left */
-            margin-top: 40px;
-        }
-
-        .text-content2 h2{
-            width: 300px;
-            height: 36px;
-            font-weight: 600;
-            font-size: 28px;
-            line-height: 35.84px;
-            letter-spacing: 0%;
-        }
-        /* .text-content2 h2{
-            font-weight: 600;
-            font-size: 28px;
-            line-height: 35.84px;
-            color: #1C1F25;
-            width: 607px;
-            height: 36px;
-        } */
-        /* .text-content2 p{
-            width: 607px;
-            height: 219px;
-            font-size: 20px;
-            font-weight: 400;
-            line-height: 36px;
-            
-            opacity: 56;
-        }  */
-
-
-        @media screen and (max-width:768px) {
-            .text-content2 {
-                align-items: center;
-                text-align: left;
-            }
-        }
-
-        /* .image-content2 img {
-            max-width: 1200%;
-            height: auto;
-            margin: 0;
-            width: 100%;
-            border-radius: 10px;
-        } */
-
-        @media screen and(max-width:768px) {
-            .content-wrapper {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-
-            /* .image-content2 img {
-                width: 80%;
-                height: auto;
-                display: block;
-                margin: 0 auto;
-            } */
-        }
-
-        .div3 {
-            display: flex;
-            flex-direction: column;
-            /* align-items: center; */
-            /* justify-content: center; */
-            max-width: 1200px;
-            margin: 12px auto;
-            padding: 15px;
-            text-align: center;
-            margin-bottom: 0px;
-            padding-bottom: 0px;
-        }
-
-        .heading2 {
-            text-align: center;
-            white-space: nowrap;
-            /* Prevent text from wrapping */
-            margin-bottom: 20px;
-            /* Adjust space below heading */
-        }
-
-        @media screen and (max-width:768px) {
-            .text-content2 {
-                max-width: 100%;
-            }
-
-            .ptag1 {
-                text-align: left;
-            }
-        }
-
-        .content-wrapper2 {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            max-width: 1200px;
-        }
-
-        .text-content3 {
-            max-width: 50%;
-            text-align: left;
-            /* Align text to the left */
-            margin-top: 40px;
-        }
-        .text-content3 h2{
-            /* width: 0px; */
-            height: 36px;
-            font-weight: 600;
-            font-size: 28px;
-            line-height: 35.84px;
-            letter-spacing: 0%;
-        }
-        /* .text-content3 h2{
-            font-weight: 600;
-            font-size: 28px;
-            line-height: 35.84px;
-            color: #1C1F25;
-            width: 607px;
-            height: 36px;
-        }
-        .text-content3 p{
-            width: 607px;
-            height: 219px;
-            font-size: 20px;
-            font-weight: 400;
-            line-height: 36px;
-            
-            opacity: 56;
-        } */
-
-        @media screen and (max-width:768px) {
-            .text-content3 {
-                max-width: 100%;
-                display: block;
-            }
-
-            .content-wrapper2 {
-                display: block;
-            }
-
-            .para2 {
-                text-align: left;
-            }
-        }
-
-        /* .image-content3 {
-            max-width: 1200%;
-            height: auto;
-            margin: 0;
-            width: 100%;
-           
-        } */
-
-        @media screen and (max-width:768px) {
-            .image-content img {
-                display: block;
-            }
-        }
-
-        /* .image-content3 img {
-            width: 100%;
-            border-radius: 10px;
-
-        } */
-
-        .image-content2,
-        .image-content3,
-        .image-content4 {
-            width: 35%;
-            max-width: 35%;
-        }
-
-        .image-content2 img,
-        .image-content3 img,
-        .image-content4 img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        @media screen and (max-width: 768px) {
-
-            .image-content2,
-            .image-content3,
-            .image-content4 {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 60%;
-                max-width: 60%;
-                margin: 0 auto;
-            }
-
-            .image-content2 img,
-            .image-content3 img,
-            .image-content4 img {
-                width: 100%;
-                height: auto;
-                border-radius: 10px;
-                display: block;
-            }
-        }
-
-
-        @media screen and (max-width: 768px) {
-            .content-wrapper2 {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .content-wrapper2 .text-content3 {
-                order: 1;
-
-            }
-
-            .content-wrapper2 .image-content3 {
-                order: 2;
-
-            }
-        }
-
-        @media screen and (max-width: 768px) {
-            p {
-                font-weight: 400px;
-                line-height: 22px;
-                size: 14px;
-            }
-        }
-
-        .freetrailbox {
-            margin-top: 6.5rem;
-            width: 1219px;
-            height: 424px;
-            display: flex;
-            justify-content: center;
-            background-color: #E7F1EF;
-            border-radius: 40px;
-
-
-        }
-
-        /* .freetrailbox-img{
-            width: 1219px;
-            height: 424px;
-            background-color: #E7F1EF;
-            border-radius: 40px;
-            
-        } */
-
-        .container4 {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1200px;
-            width: 1219%;
-            margin: 50px auto;
-            padding: 35px 60px 35px 60px;
-            background-color: #E7F1EF;
-            border-radius: 35px;
-            box-sizing: border-box;
-        }
-
-        .content4 {
-            flex: 1;
-            padding: 20px;
-        }
-
-        .content4 h1 {
-            font-size: 32px;
-            color: black;
-            font-weight: 600;
-            margin-bottom: 20px;
-            line-height: 50px;
-            margin-top: -30px;
-        }
-
-        .content4 p {
-            font-size: 18px;
-            color: #096456;
-            margin-bottom: 30px;
-        }
-
-        .content4 button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #0A6F5F;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 10px;
-            font-size: 16px;
-            cursor: pointer;
-            border: none;
-            height: 56px;
-            width: 247px;
-            margin-top: 20px;
-        }
-
-        .content4 button img {
-            margin-left: 8px;
-        }
-
-        .benefits4 {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            padding: 20px;
-            align-items: end;
-        }
-
-        .benefit-item4 {
-            background-color: #DAE9E7;
-            color: #0A6F5F;
-            padding: 20px;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            width: 381px; /* Updated width */
-            height: 88px; /* Updated height */
-            size: 16px;
-            
-            
-        }
-
-        .benefit-item4 img {
-            width: 20px;
-            height: 20px;
-            margin-right: 10px;
-        }
-
-        .benefit-item4 p {
-            margin: 0;
-            font-size: 16px;
-            color: #096456;
-        }
-
-        .benefit-item4 p strong {
-            font-size: 18px;
-            color: #0A6F5F;
-        }
-
-        /* Media query for tablet responsiveness */
-        @media (max-width: 1024px) {
-            .container4 {
-                flex-direction: column;
-                align-items: center;
-                padding: 20px;
-            }
-
-            .content4 {
-                text-align: center;
-            }
-
-            .content4 button {
-                width: 100%;
-                max-width: 300px;
-                margin: 20px auto;
-            }
-
-            .benefits4 {
-                width: 100%;
-                align-items: center;
-            }
-
-            .benefit-item4 {
-                width: 100%;
-                max-width: 400px;
-                height: auto; /* Allow height to adjust */
-            }
-            .content4 h1{
-                text-align: left;
-            }
-        }
-
-        /* Media query for mobile responsiveness */
-        @media (max-width: 768px) {
-            .container4 {
-                width: 100%;
-                padding: 10px;
-            }
-
-            .content4 h1 {
-                font-size: 24px;
-                line-height: 1.3;
-                text-align: left;
-                margin-top: -5px;
-            }
-
-            .content4 button {
-                width: 100%;
-                max-width: 300px;
-                font-size: 18px;
-                padding: 12px;
-            }
-
-            .benefit-item4 {
-                width: 100%;
-                max-width: 300px;
-                height: auto; /* Allow height to adjust */
-                padding: 15px;
-            }
-
-            .benefit-item4 img {
-                width: 30px;
-                height: 30px;
-            }
-        }
-
-        /* Media query for very small screens */
-        @media (max-width: 480px) {
-            .content4 h1 {
-                font-size: 20px;
-                text-align: left;
-                margin-top: -5px;
-            }
-
-            .content4 button {
-                font-size: 16px;
-                padding: 10px;
-            }
-
-            .benefit-item4 {
-                flex-direction: column;
-                text-align: center;
-                gap: 10px;
-            }
-
-            .benefit-item4 img {
-                width: 25px;
-                height: 25px;
-            }
-        }
-
-                /* end of div 4 */
-
-        /* Features Section */
-
-        section{
-            width: 1440px;
-            height: 100%;
-        }
-        /* .container-5 {
-        margin: auto;
-        padding: 20px;
-        max-width: 1200px;
-        width: 1219%;
-      }
-
-      /* Features Section */
-/* Features Section */
-.features {
-    padding: 0px 20px;
-    background-color: #ffffff;
-    text-align: center;
-    max-width: 1200px;
-    margin: 0 auto; /* Center the section */
-}
-
-.features h2 {
-    font-size: 28px;
-    margin-bottom: 10px;
-    font-weight: 600;
-    line-height: 44px;
-}
-
-.features p {
-    font-size: 18px;
-    color: #666;
-    margin-bottom: 40px;
-}
-
-.feature-cards {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
-    gap: 20px; /* Add gap between cards */
-}
-
-.card {
-    background: #FFFFFF;
-    padding: 25px;
-    border-radius: 12px;
-    border: 0.2px solid #ddd;
-    width: 299px;
-    height: 232px;
-    text-align: center;
-    border: 0.2px solid #0000004D;
-   
-    box-shadow: 0px 2px 4px 0px #FFFFFF;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
-    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
-}
-
-.card img {
-    /* width: 50px;
-    margin-bottom: 15px; */
-    /* align-items: center;
-    justify-content: center; */
-    /* display: block;  */
-    margin: 0 auto 15px; 
-    max-width: 100px; /* Adjust size if needed */
-}
-
-.card h3 {
-    font-size: 26px;
-    font-weight: 600;
-    line-height: 32px;
-    margin-bottom: 10px;
-}
-
-.card p {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 20px;
-    color: #666;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .feature-cards {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .card {
-        width: 100%;
-        max-width: 350px;
-    }
-}
-
-      .card img {
-        width: 50px;
-        margin-bottom: 15px;
-      }
-
-
-      /* Customer App Section */
-.customer-app {
-    padding: 60px 20px;
-    background-color: #ffffff;
-    max-width: 1200px;
-    margin: 0 auto; /* Center the section */
-}
-
-.app-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px; /* Space between image and text */
-}
-
-.app-image {
-    flex: 1;
-    max-width: 50%; /* Image takes half the width */
-    text-align: center; /* Center the image */
-}
-
-.app-image img {
-    width: 100%;
-    max-width: 400px; /* Limit image size */
-    height: auto;
-    border-radius: 10px; /* Optional: Add rounded corners */
-}
-
-.app-content {
-    flex: 1;
-    max-width: 50%; /* Text takes half the width */
-    text-align: left;
-}
-
-.app-content h2 {
-    font-size: 36px;
-    font-weight: 600;
-    line-height: 44px;
-    margin-bottom: 20px;
-}
-
-.app-content p {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    color: #717171;
-    margin-bottom: 30px;
-}
-
-.app-content .btn {
-    display: inline-block;
-    padding: 12px 25px;
-    background: #0a6f5f;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 16px;
-    text-align: center;
-}
-
-/* Mobile View */
-@media (max-width: 768px) {
-    .app-container {
-        flex-direction: column; /* Stack image and text vertically */
-        align-items: center;
-        gap: 20px;
-    }
-
-    .app-image,
-    .app-content {
-        max-width: 100%; /* Full width for both image and text */
-        text-align: center; /* Center-align image and text */
-    }
-
-    .app-content {
-        text-align: left; /* Left-align text in mobile view */
-    }
-
-    .app-content h2 {
-        font-size: 28px; /* Smaller font size for mobile */
-        line-height: 1.3;
-    }
-
-    .app-content p {
-        font-size: 14px; /* Smaller font size for mobile */
-        line-height: 1.6;
-    }
-
-    .app-content .btn {
-        width: 100%; /* Full-width button */
-        max-width: 200px; /* Limit button width */
-        margin: 0 auto; /* Center the button */
-        text-align: center;
-    }
-}
-
-/* what our client say styling */
-
-
-
-.personclass {
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: block; /* Fixes the position at the bottom */
-    bottom: 0; /* Sticks the element to the bottom of the page */
-    width: 100%;
-    /* padding: px; */
-  }
-
-  .personclass-child {
-    background-color: white;
-    width: 100%;
-    max-width: 1440px;
-    padding: 20px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-      .personclass-child h3 {
-        font-weight: 700;
-        font-size: 36px;
-        line-height: 84px;
-        text-align: center;
-        height: 84px;
-        width: 100%;
-      }
-
-      .personclass-child-content {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap;
-        width: 100%;
-        max-width: 1200px;
-        margin-top: 20px;
-      }
-
-      .personclass-child-div {
-        width: 370px;
-        height: 392px;
-        background-color: white;
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-        max-width: 370px;
-        border-radius: 7.85px;
-        border: 1px solid #0a6f5f;
-        align-items: flex-start;
-        padding: 20px;
-        /* position: relative; */
-      }
-
-      .personclass-details {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin-top: 15px;
-      }
-
-      .personclass-details img {
-        width: 67.55px;
-        height: 48.27px;
-        margin-bottom: 30px;
-      }
-
-      .personclass-details p {
-        text-align: left;
-        padding-bottom: 25px;
-      }
-
-      .personclass-details hr {
-        margin-top: auto;
-        width: 100%;
-      }
-
-      .personclass-imgwithdetails {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        width: 100%;
-        padding-top: 15px;
-        padding-left: 15px;
-        padding-right: 15px;
-      }
-
-      .personclass-imgwithdetails img {
-        width: 74.62px;
-        height: 74.62px;
-        border-radius: 50%;
-      }
-
-      .personclass-imgwithdetails p {
-        text-align: left;
-      }
-
-      .centered-image {
-        position: absolute;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-      }
-
-      .bottom-image {
-        margin-top: 20px;
-      }
-
-      @media (max-width: 1200px) {
-        .personclass-child-content {
-          justify-content: center;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .personclass-child-content {
-          flex-direction: column;
-          align-items: center;
-        }
-
-
-      }
-      @media (max-width: 1052px) {
-        .personclass-child-div {
-          width: 100%;
-          max-width: 400px;
-        }
-      }
-
-      .personclass-child-div1 {
-        width: 370px;
-        height: 392px;
-        background-color: white;
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-        max-width: 370px;
-        border-radius: 7.85px;
-        border: 1px solid #0a6f5f;
-        align-items: flex-start;
-        padding: 20px;
-        /* position: relative; */
-      }
-
-      .personclass-details {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin-top: 15px;
-      }
-
-      .personclass-details img {
-        width: 67.55px;
-        height: 48.27px;
-        margin-bottom: 30px;
-      }
-
-      .personclass-details p {
-        text-align: left;
-        padding-bottom: 25px;
-      }
-
-      .personclass-details hr {
-        margin-top: auto;
-        width: 100%;
-      }
-
-      .personclass-imgwithdetails {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        width: 100%;
-        padding-top: 15px;
-        padding-left: 15px;
-        padding-right: 15px;
-      }
-
-      .personclass-imgwithdetails img {
-        width: 74.62px;
-        height: 74.62px;
-        border-radius: 50%;
-      }
-
-      .personclass-imgwithdetails p {
-        text-align: left;
-      }
-
-      .centered-image {
-        position: absolute;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-      }
-
-      .bottom-image {
-        margin-top: 20px;
-      }
-
-      @media (max-width: 1200px) {
-        .personclass-child-content {
-          justify-content: center;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .personclass-child-content {
-          flex-direction: column;
-          align-items: center;
-        }
-
-
-      }
-      @media (max-width: 1052px) {
-        .personclass-child-div1 {
-          width: 100%;
-          max-width: 400px;
-          display: none;
-        }
-      }
-
-      .personclass-child-div2 {
-        width: 370px;
-        height: 392px;
-        background-color: white;
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-        max-width: 370px;
-        border-radius: 7.85px;
-        border: 1px solid #0a6f5f;
-        align-items: flex-start;
-        padding: 20px;
-        /* position: relative; */
-      }
-
-      .personclass-details {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin-top: 15px;
-      }
-
-      .personclass-details img {
-        width: 67.55px;
-        height: 48.27px;
-        margin-bottom: 30px;
-      }
-
-      .personclass-details p {
-        text-align: left;
-        padding-bottom: 25px;
-      }
-
-      .personclass-details hr {
-        margin-top: auto;
-        width: 100%;
-      }
-
-      .personclass-imgwithdetails {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        width: 100%;
-        padding-top: 15px;
-        padding-left: 15px;
-        padding-right: 15px;
-      }
-
-      .personclass-imgwithdetails img {
-        width: 74.62px;
-        height: 74.62px;
-        border-radius: 50%;
-      }
-
-      .personclass-imgwithdetails p {
-        text-align: left;
-      }
-
-      .centered-image {
-        position: absolute;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-      }
-
-      .bottom-image {
-        margin-top: 20px;
-      }
-
-      @media (max-width: 1200px) {
-        .personclass-child-content {
-          justify-content: center;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .personclass-child-content {
-          flex-direction: column;
-          align-items: center;
-        }
-
-
-      }
-      @media (max-width: 1052px) {
-        .personclass-child-div2 {
-          width: 100%;
-          max-width: 400px;
-          display: none;
-        }
-      }
-      .footer {
-            background-color: #E7F1EF;
-            padding: 20px 0;
-            width: 100%;
-            margin-top: 50px;
-        }
-
-        .footer-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            max-width: 1237px;
-            margin: auto;
-            padding: 40px;
-            height: 344px;
-            font-size: 16px;
-            font-weight: 500;
-            letter-spacing: -0.24px;
-        }
-
-        .footer-column {
-            margin: 10px;
-        }
-
-        .footer-column h4 {
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        .footer-column ul {
-            list-style-type: none;
-        }
-
-        .footer-column ul li {
-            margin-bottom: 8px;
-        }
-
-        .footer-column ul li a {
-            text-decoration: none;
-            color: #555;
-            transition: color 0.3s;
-        }
-
-        .footer-column ul li a:hover {
-            color: #000;
-        }
-
-        .footer-column ul li i {
-            margin-right: 10px;
-        }
-
-        .footer-column ul li:last-child {
-            display: flex;
-            gap: 10px;
-        }
-
-        .footer-column ul li a i {
-            font-size: 20px;
-        }
-
-        /* Footer Bottom */
-
-        ul{
-            padding: 0px;
-        }
-
-        .footer-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            margin-top: 20px;
-            max-width: 1237px;
-            margin: auto;
-            font-size: 14px;
-            font-weight: 500;
-            letter-spacing: -0.24px;
-        }
-
-        .footer-bottom p {
-            color: #5B5B5B
-        }
-
-        .footer-bottom ul {
-            list-style-type: none;
-            display: flex;
-            gap: 15px;
-            margin: 0;
-        }
-
-        .footer-bottom ul li {
-            margin: 0;
-        }
-
-        .footer-bottom ul li a {
-            text-decoration: none;
-            color:#000;
-            transition: color 0.3s;
-        }
-
-        .footer-bottom ul li a:hover {
-            color: #000;
-        }
-
-        /* Mobile View */
-        @media (max-width: 768px) {
-            .footer-container {
-                flex-direction: column;
-                align-items: flex-start;
-                height: auto;
-            }
-
-            .footer-column {
-                flex: 1 1 100%;
-                margin: 15px 0;
-                text-align: left;
-            }
-
-            .footer-bottom {
-                max-width: 100%;
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .footer-bottom ul {
-                flex-direction: column;
-                gap: 10px;
-                text-align: left;
-            }
-
-            .footer-bottom p {
-                margin-bottom: 10px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <title>atEats Marketing Site</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Outfit" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+  <nav class="navbar">
+    <div class="container">
+      <a href="#" class="logo">atEats</a>
+      <div class="nav-links" id="nav-links">
+        <a href="#">Features</a>
+        <div class="dropdown">
+          <button class="dropbtn">
+            Restaurants &nbsp;&nbsp;<i class="fa-solid fa-chevron-down" style="
+                  width: 24px;
+                  height: 24px;
+                  color: #000000;
+                  opacity: 0.89;
+                  margin-top: 4px;
+                "></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="#">Cafes and Coffee Shops &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-chevron-right" style="
+                    width: 24px;
+                    height: 24px;
+                    color: #000000;
+                    opacity: 0.89;
+                  "></i>
+              <br />
+              <p style="
+                    color: grey;
+                    margin-bottom: 13px;
+                    font-size: 12px;
+                    margin-top: -7px;
+                  ">
+                Relaxed spaces serving coffee, snacks, and cozy vibes
+              </p>
+            </a>
+            <a href="#">Specialty Restaurants &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-chevron-right" style="
+                    width: 24px;
+                    height: 24px;
+                    color: #000000;
+                    opacity: 0.89;
+                  "></i>
+              <p style="
+                    color: grey;
+                    margin-bottom: 13px;
+                    font-size: 12px;
+                    margin-top: -7px;
+                  ">
+                Unique dining experiences with focused cuisines
+              </p>
+            </a>
+            <a href="#">Bakeries and Dessert Shops &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-chevron-right" style="
+                    width: 24px;
+                    height: 24px;
+                    color: #000000;
+                    opacity: 0.89;
+                  "></i>
+              <p style="
+                    color: grey;
+                    margin-bottom: 13px;
+                    font-size: 12px;
+                    margin-top: -7px;
+                  ">
+                Sweet creations and freshly baked treats to delight
+              </p>
+            </a>
+            <a href="#">Pubs and Bars &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-chevron-right" style="
+                    width: 24px;
+                    height: 24px;
+                    color: #000000;
+                    opacity: 0.89;
+                  "></i>
+              <p style="
+                    color: grey;
+                    margin-bottom: 13px;
+                    font-size: 12px;
+                    margin-top: -7px;
+                  ">
+                Lively spots for drinks, bites, and great conversations
+              </p>
+            </a>
+          </div>
+        </div>
+        <a href="#">Pricing</a>
+        <a href="#">About</a>
+        <div class="dropdown">
+          <button class="dropbtn">
+            Help &nbsp;
+            <i class="fa-solid fa-chevron-down" style="
+                  width: 24px;
+                  height: 24px;
+                  color: #000000;
+                  opacity: 0.89;
+                  margin-top: 1px;
+                "></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="#">Blogs &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-chevron-right" style="
+                    width: 24px;
+                    height: 24px;
+                    color: #000000;
+                    opacity: 0.89;
+                  "></i>
+              <p style="
+                    color: grey;
+                    margin-bottom: 13px;
+                    font-size: 12px;
+                    margin-top: -7px;
+                  ">
+                Explore insights, updates, and expert tips.
+              </p>
+            </a>
+            <a href="#">User Guide &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-chevron-right" style="
+                    width: 24px;
+                    height: 24px;
+                    color: #000000;
+                    opacity: 0.89;
+                  "></i>
+              <p style="
+                    color: grey;
+                    margin-bottom: 13px;
+                    font-size: 12px;
+                    margin-top: -7px;
+                  ">
+                Step-by-step instructions to get started
+              </p>
+            </a>
+            <a href="#">Support &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-chevron-right" style="
+                    width: 24px;
+                    height: 24px;
+                    color: #000000;
+                    opacity: 0.89;
+                  "></i>
+              <p style="
+                    color: grey;
+                    margin-bottom: 13px;
+                    font-size: 12px;
+                    margin-top: -7px;
+                  ">
+                Find solutions or connect with our team
+              </p>
+            </a>
+          </div>
+        </div>
+        <a href="#" style="margin-bottom: 2px">Contact</a>
+        <button class="login-btn">Login</button>
+      </div>
 
-
-    <nav class="navbar">
-        <div class="container">
-            <a href="#" class="logo">atEats</a>
-            <div class="nav-links" id="nav-links">
-                <a href="#">Features</a>
-                <div class="dropdown">
-                    <button class="dropbtn">Restaurants &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-chevron-down" style="width: 24px; height: 24px; color: #000000;opacity: 0.89; margin-top: 4px;"></i></button>
-                    <div class="dropdown-content">
-                        <a href="#">Cafes and Coffee Shops &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-chevron-right" style="width: 24px; height: 24px; color: #000000;opacity: 0.89;"></i> <br> <p style="color: grey; margin-bottom: 13px; font-size: 12px;margin-top: -7px;">Relaxed spaces serving coffee, snacks, and cozy vibes</p></a>
-                        <a href="#">Specialty Restaurants &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-chevron-right" style="width: 24px; height: 24px; color: #000000;opacity: 0.89;"></i><p style="color: grey;margin-bottom: 13px; font-size: 12px;margin-top: -7px;">Unique dining experiences with focused cuisines</p></a>
-                        <a href="#">Bakeries and Dessert Shops &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-chevron-right" style="width: 24px; height: 24px; color: #000000;opacity: 0.89;"></i><p style="color: grey;margin-bottom: 13px; font-size: 12px;margin-top: -7px;">Sweet creations and freshly baked treats to delight</p></a>
-                        <a href="#">Pubs and Bars &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-chevron-right" style="width: 24px; height: 24px; color: #000000;opacity: 0.89;"></i><p style="color: grey;margin-bottom: 13px; font-size: 12px;margin-top: -7px;">Lively spots for drinks, bites, and great conversations</p></a>
-                    </div>
-                </div>
-                <a href="#">Pricing</a>
-                <a href="#">About</a>
-                <div class="dropdown">
-                    <button class="dropbtn">Help <i class="fa-solid fa-chevron-down" style="width: 24px; height: 24px; color: #000000;opacity: 0.89;margin-top: 1px;"></i></button>
-                    <div class="dropdown-content">
-                        <a href="#">Blogs &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-chevron-right" style="width: 24px; height: 24px; color: #000000;opacity: 0.89;"></i><p style="color: grey;margin-bottom: 13px; font-size: 12px;margin-top: -7px;">Explore insights, updates, and expert tips.</p></a>
-                        <a href="#">User Guide &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-chevron-right" style="width: 24px; height: 24px; color: #000000;opacity: 0.89;"></i><p style="color: grey;margin-bottom: 13px; font-size: 12px;margin-top: -7px;">Step-by-step instructions to get started</p></a>
-                        <a href="#">Support &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-chevron-right" style="width: 24px; height: 24px; color: #000000;opacity: 0.89;"></i><p style="color: grey;margin-bottom: 13px; font-size: 12px;margin-top: -7px;">Find solutions or connect with our team</p></a>
-                    </div>
-                </div>
-                <a href="#" style="margin-bottom: 2px;">Contact</a>
-                <button class="login-btn">Login</button>
-            </div>
-            
-            <button class="menu-btn" id="menu-btn">☰</button>
-        </div>
-
-
-        <div class="containermain">
-            <div class="text-content">
-                <h1 style="font-weight: bold; font-weight: 600; line-height: 52px; size: 40px;">The All-in-One Solution
-                    for <span>Single</span> or <span>Multi-Branch
-                        Restaurant</span> Success</h1>
-                <p style="line-height: 36px; font-size: x-large; color: #00000099;">Manage menus, track inventory, boost
-                    customer loyalty,
-                    and monitor performance in real-time — all from a
-                    single application.</p>
-                <div class="buttons">
-                    <button>Buy Now</button>
-                    <button class="free-trial">Free Trial</button>
-                </div>
-            </div>
-            <div class="image-content">
-                <img src="1st.png" alt="Restaurant Management">
-            </div>
-        </div>
-        <hr>
-        <div class="div2">
-            <h1 style="font-weight: bold;margin-bottom: 20px;" class="heading1"> Comprehensive Solution for Seamless Restaurant Management
-            </h1>
-            <div class="content-wrapper">
-                <div class="text-content2">
-                    <h2 style="color: black;font-weight: bold;">Website</h2>
-                    <p style="line-height: 2.0; font-size: larger; color: #0000008F;" class="ptag1">Showcase your brand
-                        with the stunning
-                        and user-friendly
-                        website that attracts customers
-                        and streamlines
-                        online ordering, reservation, and inquiries. Designed for multi-branch businesses, it provides
-                        real-time
-                        updates and seamless navigation to highlight your unique offerings.</p>
-                </div>
-                <div class="image-content2">
-                    <img src="2nd.png" alt="Restaurant Management">
-                </div>
-            </div>
-        </div>
-
-        <div class="div3">
-            <div class="content-wrapper2">
-                <div class="image-content3">
-                    <img src="3rd.png" alt="Restaurant Management">
-                </div>
-
-                <div class="text-content3">
-                    <h2 style="color: black; font-weight: bold;"> <b>Admin Panel</b></h2>
-                    <p style="line-height: 2.0; font-size: larger; color: #0000008F;" class="para2">Take control of your
-                        entire restaurant
-                        chain with our powerful
-                        admin panel. Monitor performance, manage branches, update
-                        menus, track inventory, and generate detailed reports — all from
-                        a single, intuitive dashboard.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="div2">
-            <div class="content-wrapper">
-                <div class="text-content2">
-                    <h2 style="color: black;font-weight: bold;">Branch Panel</h2>
-                    <p style="line-height: 2.0; font-size: larger; color: #0000008F;" class="ptag1">Give each branch its
-                        own command
-                        center with a dedicated branch
-                        panel. Manage daily operations, orders, staff schedules, and
-                        customer preferences while staying connected with the main admin
-                        system. Handle daily tasks like orders, staff schedules, and inventory
-                        with ease.</p>
-                </div>
-                <div class="image-content2">
-                    <img src="4.png" alt="Restaurant Management">
-                </div>
-            </div>
-        </div>
-
-        <div class="div3">
-            <div class="content-wrapper2">
-                <div class="image-content3">
-                    <img src="5.png" alt="Restaurant Management">
-                </div>
-                <div class="text-content3">
-                    <h2 style="color: black; font-weight: bold;"> <b>Kitchen App</b></h2>
-                    <p style="line-height: 2.0;font-size: larger ;color: #0000008F;" class="para2">Streamline kitchen
-                        operations with an
-                        app designed for
-                        efficiency. Track orders in real time, prioritize tasks, and ensure
-                        seamless communication between the front-of-house and
-                        kitchen staff for faster, error-free service. Prioritize dishes,
-                        minimize errors, and improve communication with staff.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="div2">
-            <div class="content-wrapper">
-                <div class="text-content2">
-                    <h2 style="color: black;font-weight: bold;">Customer App</h2>
-                    <p style="line-height: 2.0;font-size: larger; color: #0000008F;" class="ptag1">Enhance customer
-                        satisfaction with a
-                        personalized app for easy
-                        ordering, tracking, and reservations. Engage users with loyalty
-                        programs, special offers, and instant notifications to keep them
-                        coming back. Enable hassle-free ordering, reservations, and order
-                        tracking.</p>
-                </div>
-                <div class="image-content2">
-                    <img src="6.png" alt="Restaurant Management">
-                </div>
-            </div>
-        </div>
-
-        <div class="div3">
-            <div class="content-wrapper2">
-                <div class="image-content3">
-                    <img src="9.png" alt="Restaurant Management">
-                </div>
-                <div class="text-content3">
-                    <h2 style="color: black; font-weight: bold;"> <b>Deliveryman App</b></h2>
-                    <p style="line-height: 2.0;font-size: larger; color: #0000008F;" class="para2">Simplify delivery
-                        management with an
-                        app designed for speed
-                        and accuracy. Assign orders, track delivery status, and optimize
-                        routes in real time. Ensure timely deliveries and improve
-                        customer satisfaction. Empower your delivery team with smart
-                        tools.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="div2">
-            <div class="content-wrapper">
-                <div class="text-content2">
-                    <h2 style="color: black;font-weight: bold;">Table App</h2>
-                    <p style="line-height: 2.0;font-size: larger;color: #0000008F;" class="ptag1">Enhance in-house
-                        dining with a
-                        table-side app for seamless service.
-                        Let customers browse menus, place orders, and request assistance
-                        effortlessly. Streamline order flow to the kitchen and back. Create a
-                        memorable, tech-driven dining experience.</p>
-                </div>
-                <div class="image-content2">
-                    <img src="10.png" alt="Restaurant Management">
-                </div>
-            </div>
-        </div>
-
-        <div class="container4">
-            <div class="content4">
-                <h1>Experience the Future of Single or Multi Branch Restaurant with atEats</h1>
-                <button> <b>Start Your Free Trial</b> <img src="12.png" alt=""></button>
-            </div>
-            <div class="benefits4">
-                <div class="benefit-item4">
-                    <img src="13.png" alt="Instant Access">
-                    <p><strong>Instant Access</strong><br>Begin exploring atEats full suite of features immediately</p>
-                </div>
-                <div class="benefit-item4">
-                    <img src="14.png" alt="No Commitments">
-                    <p><strong>No Commitments</strong><br>No credit card required, and you can cancel anytime</p>
-                </div>
-                <div class="benefit-item4">
-                    <img src="15.png" alt="Dedicated Support">
-                    <p><strong>Dedicated Support</strong><br>Our team is here to assist you every step of your trial</p>
-                </div>
-            </div>
-        </div>
-    <!-- Features Section -->
-<!-- Features Section -->
-<section class="features">
-    <h2>Empower Your Restaurant Chain with Our All-in-One <br> Business Solution</h2>
-    <p>To whom atEats is suitable for?</p>
-    <div class="feature-cards">
-        <div class="card">
-            <img src="18.png" alt="Boost Engagement" />
-            <h3>Boost Customer Engagement</h3>
-            <p>Leverage the app and website for personalized experiences.</p>
-        </div>
-        <div class="card">
-            <img src="19.png" alt="Real-Time Insights" />
-            <h3>Real-Time Insights</h3>
-            <p> Gain visibility into every branch's performance. Achieve a clear view of each branch's performance.</p>
-        </div>
-        <div class="card">
-            <img src="20.png" alt="Scalable Solution" />
-            <h3>Scalable Solution</h3>
-            <p>Perfect for small franchises or large restaurant chains.Tailored to meet the needs of businesses of any size.</p>
-        </div>
+      <button class="menu-btn" id="menu-btn">☰</button>
     </div>
-</section>
-  
-<!-- Customer App Section -->
-<section class="customer-app">
-    <div class="app-container">
-        <div class="app-image">
-            <img src="21.png" alt="Customer App Illustration" />
-        </div>
-        <div class="app-content">
-            <h2>How the Customer App Works</h2>
-            <p>
-                From placing orders to giving feedback, the app ensures a smooth and engaging interaction every step of the way. Discover the seamless experience of our Customer App, designed to enhance convenience and satisfaction for your restaurant patrons. From placing orders to giving feedback, the app ensures a smooth and engaging interaction every step of the way.
-            </p>
-            <a href="#" class="btn"><b>Learn More</b></a>
-        </div>
+  </nav>
+
+  <div class="containermain">
+    <div class="text-content">
+      <h1 style="
+            font-weight: bold;
+            font-weight: 600;
+            line-height: 52px;
+            size: 40px;
+          ">
+        The All-in-One Solution for <span>Single</span> or
+        <span>Multi-Branch Restaurant</span> Success
+      </h1>
+      <p style="line-height: 36px; font-size: x-large; color: #00000099">
+        Manage menus, track inventory, boost customer loyalty, and monitor
+        performance in real-time — all from a single application.
+      </p>
+      <div class="buttons">
+        <button>Buy Now</button>
+        <button class="free-trial">Free Trial</button>
+      </div>
     </div>
-</section>
-
-<!-- what our client say -->
-
-<div class="personclass">
-    <div class="personclass-child">
-      <h3>What Our Clients Say</h3>
-      <div class="personclass-child-content">
-        <div class="personclass-child-div">
-          <div class="personclass-details">
-            <img src="22.png" alt="" />
-            <p>AtEats is designed as a collaboration tool for businesses that is a full project management solution.</p>
-            <hr />
-          </div>
-          <div class="personclass-imgwithdetails">
-            <img src="23.png" alt="" />
-            <div>
-              <p><strong>Oberon Shaw, MCH</strong></p>
-              <p>Head of Talent Acquisition, North America</p>
-            </div>
-          </div>
+    <div class="image-content">
+      <img src="1st.png" alt="Restaurant Management" />
+    </div>
+  </div>
+  <hr />
+  <div class="div2">
+    <h1 style="font-weight: bold; margin-bottom: 20px" class="heading1">
+      Comprehensive Solution for Seamless Restaurant Management
+    </h1>
+    <div class="div3">
+      <div class="content-wrapper2">
+        <div class="image-content3">
+          <img src="2nd.png" alt="Restaurant Management" />
         </div>
 
-        <div class="personclass-child-div1">
-          <div class="personclass-details">
-            <img src="22.png" alt="" />
-            <p>AtEats is designed as a collaboration tool for businesses that is a full project management solution.</p>
-            <hr />
-          </div>
-          <div class="personclass-imgwithdetails">
-            <img src="24.png" alt="" />
-            <div>
-              <p><strong>Oberon Shaw, MCH</strong></p>
-              <p>Head of Talent Acquisition, North America</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="personclass-child-div2">
-          <div class="personclass-details">
-            <img src="22.png" alt="" />
-            <p>AtEats is designed as a collaboration tool for businesses that is a full project management solution.</p>
-            <hr />
-          </div>
-          <div class="personclass-imgwithdetails">
-            <img src="25.png" alt="" />
-            <div>
-              <p><strong>Oberon Shaw, MCH</strong></p>
-              <p>Head of Talent Acquisition, North America</p>
-            </div>
-          </div>
+        <div class="text-content3">
+          <h2 style="color: black; font-weight: bold"><b>Website</b></h2>
+          <p style="line-height: 2; font-size: larger; color: #0000008f" class="para2">
+            Showcase your brand with a stunning, user-friendly website that attracts customers and streamlines online ordering, reservations, and inquiries. Designed for multi-branch businesses, it provides real-time updates and seamless navigation to highlight your unique offerings.
+          </p>
         </div>
       </div>
-      <img class="bottom-image" style="width: 60px; height: 12px;" src="27.png" alt="" />
     </div>
   </div>
 
+    <div class="div34">
+      <div class="content-wrapper21">
+        <div class="image-content32">
+          <img src="3rd.png" alt="Restaurant Management" />
+        </div>
 
-<!-- bottom footer -->
-<footer class="footer">
-    <div class="footer-container">
-        <div class="footer-column">
-            <h4 style="font-weight: bold; size: 60px;line-height: 25.2px;">atEats</h4>
+        <div class="text-content32">
+          <h2 style="color: black; font-weight: bold"><b>Admin Panel</b></h2>
+          <p style="line-height: 2; font-size: larger; color: #0000008f" class="para21">
+            Take control of your entire restaurant chain with our powerful admin
+            panel. Monitor performance, manage branches, update menus, track
+            inventory, and generate detailed reports — all from a single,
+            intuitive dashboard.
+          </p>
         </div>
-        <div class="footer-column">
-            <h4 style="font-weight: bold;">Features</h4>
-            <ul>
-                <li><a href="#">Website</a></li>
-                <li><a href="#">Admin Panel</a></li>
-                <li><a href="#">Branch Panel</a></li>
-                <li><a href="#">Kitchen App</a></li>
-                <li><a href="#">Customer App</a></li>
-                <li><a href="#">Deliveryman App</a></li>
-            </ul>
-        </div>
-        <div class="footer-column">
-            <h4 style="font-weight: bold; size: 60px;line-height: 25.2px;">Company</h4>
-            <ul>
-                <li><a href="#">About us</a></li>
-                <li><a href="#">Contact us</a></li>
-            </ul>
-        </div>
-        <div class="footer-column">
-            <h4 style="font-weight: bold; size: 60px;line-height: 25.2px;">Restaurants</h4>
-            <ul>
-                <li><a href="#">Cafes and Coffee Shops</a></li>
-                <li><a href="#">Specialty Restaurants</a></li>
-                <li><a href="#">Bakeries and Dessert Shops</a></li>
-                <li><a href="#">Pubs and Bars</a></li>
-            </ul>
-        </div>
-        <div class="footer-column">
-            <h4 style="font-weight: bold; size: 60px;line-height: 25.2px;">Quick Links</h4>
-            <ul>
-                <li><a href="#">Pricing</a></li>
-                <li><a href="#">Blogs</a></li>
-                <li><a href="#">User Guide</a></li>
-                <li><a href="#">Support</a></li>
-            </ul>
-        </div>
-        <div class="footer-column">
-            <h4 style="font-weight: bold; size: 60px;line-height: 25.2px;">Contact Us</h4>
-            <ul>
-                <li><a href="tel:+919892532903">+91 9892532903</a></li>
-                <li><a href="mailto:support@ateats.com">support@ateats.com</a></li>
-                <li>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                </li>
-            </ul>
-        </div>
+      </div>
     </div>
-    <!-- Footer Bottom -->
-    <div class="footer-bottom">
-        <p style="margin-left: 28px;">&copy; 2025atEats &nbsp &nbsp • &nbsp &nbsp Terms and Conditions &nbsp &nbsp • &nbsp &nbsp Privacy Policy</p>
+
+    <div class="div3">
+      <div class="content-wrapper2">
+        <div class="image-content3">
+          <img src="4.png" alt="Restaurant Management" />
+        </div>
+
+        <div class="text-content3">
+          <h2 style="color: black; font-weight: bold"><b>Branch Panel</b></h2>
+          <p style="line-height: 2; font-size: larger; color: #0000008f" class="para2">
+            Give each branch its own command center with a dedicated branch panel. Manage daily operations, orders, staff schedules, and customer preferences while staying connected with the main admin system.Handle daily tasks like orders, staff schedules, and inventory with ease.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="div34">
+      <div class="content-wrapper21">
+        <div class="image-content32">
+          <img src="5.png" alt="Restaurant Management" />
+        </div>
+        <div class="text-content32">
+          <h2 style="color: black; font-weight: bold"><b>Kitchen App</b></h2>
+          <p style="line-height: 2; font-size: larger; color: #0000008f" class="para21">
+            Streamline kitchen operations with an app designed for efficiency. Track orders in real time, prioritize tasks, and ensure seamless communication between the front-of-house and kitchen staff for faster, error-free service. Prioritize dishes, minimize errors, and improve communication with staff.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="div3">
+      <div class="content-wrapper2">
+        <div class="image-content3">
+          <img src="6.png" alt="Restaurant Management" />
+        </div>
+
+        <div class="text-content3">
+          <h2 style="color: black; font-weight: bold"><b>Customer App</b></h2>
+          <p style="line-height: 2; font-size: larger; color: #0000008f" class="para2">
+            Enhance customer satisfaction with a personalized app for easy ordering, tracking, and reservations. Engage users with loyalty programs, special offers, and instant notifications to keep them coming back.Enable hassle-free ordering, reservations, and order tracking.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="div34">
+      <div class="content-wrapper21">
+        <div class="image-content32">
+          <img src="7.png" alt="Restaurant Management" />
+        </div>
+
+        <div class="text-content32">
+          <h2 style="color: black; font-weight: bold"><b>Deliveryman App</b></h2>
+          <p style="line-height: 2; font-size: larger; color: #0000008f" class="para21">
+            Simplify delivery management with an app designed for speed and accuracy. Assign orders, track delivery status, and optimize routes in real time. Ensure timely deliveries and improve customer satisfaction. Empower your delivery team with smart tools.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="div3">
+      <div class="content-wrapper2">
+        <div class="image-content3">
+          <img src="8.png" alt="Restaurant Management" />
+        </div>
+
+        <div class="text-content3">
+          <h2 style="color: black; font-weight: bold"><b>Table App</b></h2>
+          <p style="line-height: 2; font-size: larger; color: #0000008f" class="para2">
+            Enhance in-house dining with a table-side app for seamless service. Let customers browse menus, place orders, and request assistance effortlessly. Streamline order flow to the kitchen and back. Create a memorable, tech-driven dining experience.
+
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container4">
+      <div class="content4">
+        <h1>
+          Experience the Future of Single or Multi Branch Restaurant with atEats
+        </h1>
+        <button>
+          <b>Start Your Free Trial</b> <img src="12.png" alt="" />
+        </button>
+      </div>
+      <div class="benefits4">
+        <div class="benefit-item4">
+          <img src="13.png" alt="Instant Access" />
+          <p>
+            <strong>Instant Access</strong><br />Begin exploring atEats full
+            suite of features immediately
+          </p>
+        </div>
+        <div class="benefit-item4">
+          <img src="14.png" alt="No Commitments" />
+          <p>
+            <strong>No Commitments</strong><br />No credit card required, and
+            you can cancel anytime
+          </p>
+        </div>
+        <div class="benefit-item4">
+          <img src="15.png" alt="Dedicated Support" />
+          <p>
+            <strong>Dedicated Support</strong><br />Our team is here to assist
+            you every step of your trial
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- Features Section -->
+    <!-- Features Section -->
+    <section class="features">
+      <h2>
+        Empower Your Restaurant Chain with Our All-in-One <br />
+        Business Solution
+      </h2>
+      <p>To whom atEats is suitable for?</p>
+      <div class="feature-cards">
+        <div class="card">
+          <img src="18.png" alt="Boost Engagement" />
+          <h3>Boost Customer Engagement</h3>
+          <p>Leverage the app and website for personalized experiences.</p>
+        </div>
+        <div class="card">
+          <img src="19.png" alt="Real-Time Insights" />
+          <h3>Real-Time Insights</h3>
+          <p>
+            Gain visibility into every branch's performance. Achieve a clear
+            view of each branch's performance.
+          </p>
+        </div>
+        <div class="card">
+          <img src="20.png" alt="Scalable Solution" />
+          <h3>Scalable Solution</h3>
+          <p>
+            Perfect for small franchises or large restaurant chains.Tailored to
+            meet the needs of businesses of any size.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Customer App Section -->
+    <section class="customer-app">
+      <div class="app-container">
+        <div class="app-image">
+          <img src="21.png" alt="Customer App Illustration" />
+        </div>
+        <div class="app-content">
+          <h2>How the Customer App Works</h2>
+          <p>
+            From placing orders to giving feedback, the app ensures a smooth and
+            engaging interaction every step of the way. Discover the seamless
+            experience of our Customer App, designed to enhance convenience and
+            satisfaction for your restaurant patrons. From placing orders to
+            giving feedback, the app ensures a smooth and engaging interaction
+            every step of the way.
+          </p>
+          <a href="#" class="btn"><b>Learn More</b></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- what our client say -->
+
+    <div class="personclass">
+      <div class="personclass-child">
+        <h3>What Our Clients Say</h3>
+        <div class="personclass-child-content">
+          <div class="personclass-child-div">
+            <div class="personclass-details">
+              <img src="22.png" alt="" />
+              <p>
+                AtEats is designed as a collaboration tool for businesses that
+                is a full project management solution.
+              </p>
+              <hr />
+            </div>
+            <div class="personclass-imgwithdetails">
+              <img src="23.png" alt="" />
+              <div>
+                <p><strong>Oberon Shaw, MCH</strong></p>
+                <p>Head of Talent Acquisition, North America</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="personclass-child-div1">
+            <div class="personclass-details">
+              <img src="22.png" alt="" />
+              <p>
+                AtEats is designed as a collaboration tool for businesses that
+                is a full project management solution.
+              </p>
+              <hr />
+            </div>
+            <div class="personclass-imgwithdetails">
+              <img src="24.png" alt="" />
+              <div>
+                <p><strong>Oberon Shaw, MCH</strong></p>
+                <p>Head of Talent Acquisition, North America</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="personclass-child-div2">
+            <div class="personclass-details">
+              <img src="22.png" alt="" />
+              <p>
+                AtEats is designed as a collaboration tool for businesses that
+                is a full project management solution.
+              </p>
+              <hr />
+            </div>
+            <div class="personclass-imgwithdetails">
+              <img src="25.png" alt="" />
+              <div>
+                <p><strong>Oberon Shaw, MCH</strong></p>
+                <p>Head of Talent Acquisition, North America</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <img class="bottom-image" style="width: 60px; height: 12px" src="27.png" alt="" />
+      </div>
+    </div>
+
+    <!-- bottom footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-column">
+          <h4 style="font-weight: bold; size: 60px; line-height: 25.2px">
+            atEats
+          </h4>
+        </div>
+        <div class="footer-column">
+          <h4 style="font-weight: bold">Features</h4>
+          <ul>
+            <li><a href="#">Website</a></li>
+            <li><a href="#">Admin Panel</a></li>
+            <li><a href="#">Branch Panel</a></li>
+            <li><a href="#">Kitchen App</a></li>
+            <li><a href="#">Customer App</a></li>
+            <li><a href="#">Deliveryman App</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4 style="font-weight: bold; size: 60px; line-height: 25.2px">
+            Company
+          </h4>
+          <ul>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Contact us</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4 style="font-weight: bold; size: 60px; line-height: 25.2px">
+            Restaurants
+          </h4>
+          <ul>
+            <li><a href="#">Cafes and Coffee Shops</a></li>
+            <li><a href="#">Specialty Restaurants</a></li>
+            <li><a href="#">Bakeries and Dessert Shops</a></li>
+            <li><a href="#">Pubs and Bars</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4 style="font-weight: bold; size: 60px; line-height: 25.2px">
+            Quick Links
+          </h4>
+          <ul>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">User Guide</a></li>
+            <li><a href="#">Support</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4 style="font-weight: bold; size: 60px; line-height: 25.2px">
+            Contact Us
+          </h4>
+          <ul>
+            <li><a href="tel:+919892532903">+91 9892532903</a></li>
+            <li><a href="mailto:support@ateats.com">support@ateats.com</a></li>
+            <li>
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>
+          &copy;&nbsp;&nbsp;&nbsp;2025atEats</p>&nbsp;&nbsp;&nbsp;<p>• &nbsp;&nbsp;&nbsp;Terms and Conditions</p>&nbsp;&nbsp;&nbsp;
+           <p>•&nbsp;&nbsp;&nbsp;Privacy Policy</p>
+        
         <ul>
-            <li><a href="#"></a></li>
-            <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
         </ul>
-    </div>
-</footer>
+      </div>
+    </footer>
 </body>
 <script>
-const menuBtn = document.getElementById('menu-btn');
-const navLinks = document.getElementById('nav-links');
-const dropdowns = document.querySelectorAll('.dropdown');
+    const menuBtn = document.getElementById("menu-btn");
+    const navLinks = document.getElementById("nav-links");
+    const dropdowns = document.querySelectorAll(".dropdown");
 
-menuBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-});
-
-dropdowns.forEach(dropdown => {
-    const dropbtn = dropdown.querySelector('.dropbtn');
-    const dropdownContent = dropdown.querySelector('.dropdown-content');
-
-    dropbtn.addEventListener('click', () => {
-        if (window.innerWidth <= 850) { // Only for mobile view
-            dropdown.classList.toggle('active');
-            dropdownContent.style.display = dropdown.classList.contains('active') ? 'block' : 'none';
-        }
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
     });
-});
+
+    dropdowns.forEach((dropdown) => {
+      const dropbtn = dropdown.querySelector(".dropbtn");
+      const dropdownContent = dropdown.querySelector(".dropdown-content");
+
+      dropbtn.addEventListener("click", () => {
+        if (window.innerWidth <= 850) {
+          // Only for mobile view
+          dropdown.classList.toggle("active");
+          dropdownContent.style.display = dropdown.classList.contains("active") ?
+            "block" :
+            "none";
+        }
+      });
+    });
 </script>
 </html>
